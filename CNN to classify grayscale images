@@ -1,0 +1,25 @@
+'''The goal of this task is to implement a simple fully connected neural network to classify grayscale images of handwritten digits (0 - 9) from
+the MNIST dataset. In this task will use torch to implement.'''
+
+import torch
+from torch.utils.data import DataLoader, TensorDataset
+import torch.nn as nn
+import torchvision.transforms as transforms
+import torchvision.datasets as dsets
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+
+# Normalize samples
+'''transform = transforms.Compose(
+    [transforms.ToTensor(),
+     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])'''
+     
+'''This dataset contains 60,000 training images and 10,000 testing images.We will remove 10,000 images from the training set and call this our validation set. 
+Each image is 28 × 28 pixels in size, and is generally represented as a flat vector of 784 numbers. The dataset also includes labels for each image.'''
+
+# load data set
+train_data = np.loadtxt('train_data.csv', delimiter=',',skiprows=1)[:,1:]
+train_labels = np.loadtxt('train_labels.csv', delimiter=',',skiprows=1)[:,1:]
+test_data = np.loadtxt('test_data.csv', delimiter=',',skiprows=1)[:,1:]
+test_labels = np.loadtxt('test_labels.csv', delimiter=',',skiprows=1)[:,1:]
