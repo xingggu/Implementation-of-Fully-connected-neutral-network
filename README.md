@@ -1,1 +1,1 @@
-# special-spork
+The goal of this task is to implement a simple fully connected neural network to classify grayscale images of handwritten digits (0 - 9) from the MNIST dataset. In this task will use torch to implement.
